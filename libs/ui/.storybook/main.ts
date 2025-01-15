@@ -8,17 +8,28 @@ const config: StorybookConfig = {
     {
       name: '@storybook/addon-styling-webpack',
       options: {
-        postCss: true,
         rules: [
           {
             test: /\.css$/,
+            sideEffects: true,
             use: [
-              'style-loader',
-              'css-loader'
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  implementation: require('postcss'),
+                },
+              },
             ],
-          }
+          },
         ],
-      }
+      },
     },
   ],
   framework: {
