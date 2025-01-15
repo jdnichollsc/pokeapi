@@ -1,0 +1,10 @@
+{
+  "environmentFiles": {
+    "default": "libs/shared/src/lib/environments/environment.ts",
+    "production": "libs/shared/src/lib/environments/environment.prod.ts"
+  },
+  "envFiles": [
+    ".env",
+    ".env.development"
+  ]
+} 

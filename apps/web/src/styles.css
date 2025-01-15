@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+
+.todo-container {
+  @apply max-w-4xl mx-auto p-4;
+}
+
+.todo-input {
+  @apply input input-bordered w-full;
+}
+
+.todo-item {
+  @apply flex items-center gap-4 p-4 bg-base-200 rounded-lg mb-2;
+}
+
+.todo-item.completed {
+  @apply opacity-60;
+}
+
+.todo-item.past-due {
+  @apply border-l-4 border-error;
+}
